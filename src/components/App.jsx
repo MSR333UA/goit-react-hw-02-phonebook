@@ -3,8 +3,6 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-
-        color: '#010101',
       }}
     >
       React homework template
