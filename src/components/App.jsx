@@ -3,9 +3,7 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-        display: 'flex',
 
-        fontSize: 40,
         color: '#010101',
       }}
     >
