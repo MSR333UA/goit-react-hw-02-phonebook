@@ -28,7 +28,7 @@ ContactList.propTypes = {
     PropTypes.exact({
       id: PropTypes.string,
       name: PropTypes.string,
-      number: PropTypes.number,
+      number: PropTypes.string,
     })
   ).isRequired,
   removeContacts: PropTypes.func.isRequired,
