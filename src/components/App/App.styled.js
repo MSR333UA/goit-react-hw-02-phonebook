@@ -5,7 +5,7 @@ export const DivContainer = styled.div`
   margin: 50px auto;
   padding: 30px 60px;
   width: 650px;
-  /* background: linear-gradient(to right, #fbd3e9, #37bbb4); */
+  background: linear-gradient(to right, #fbd3e9, #37bbb4);
   border-radius: 15px;
 `;
 

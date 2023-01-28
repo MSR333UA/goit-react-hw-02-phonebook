@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -17,25 +18,16 @@ export class App extends Component {
   };
 
   addContacts = newContact => {
-    if (
-      this.state.contacts.find(
-        contact =>
-          contact.name.toLowerCase().trim() ===
-          newContact.name.toLowerCase().trim()
-      )
-    ) {
-      return alert(` ${newContact.name} is already in contacts.`);
+    const isContactExist = this.state.contacts.some(
+      contact =>
+        contact.name.toLowerCase().trim() ===
+        newContact.name.toLowerCase().trim()
+    );
+    if (isContactExist) {
+      return Notify.failure(` ${newContact.name} is already in contacts.`);
     }
 
     this.setState(prev => ({ contacts: [...prev.contacts, newContact] }));
-
-    // OR
-
-    // this.setState(({ contacts }) =>
-    //   contacts.find(contact => contact.name.toLowerCase().trim() === newContact.name.toLowerCase().trim())
-    //     ? alert(`${newContact.name} is already in contacts`)
-    //     : { contacts: [newContact, ...contacts] }
-    // );
   };
 
   removeContacts = id => {
